@@ -1,0 +1,23 @@
+using System;
+
+namespace Ex
+{
+    internal class Program
+    {       
+        static string GerarEmail(string NomeC)
+        {
+            string[] partesDnome = NomeC.Split(' ');
+            string Pnome = partesDnome[0].ToLower();
+            string Snome = partesDnome[partesDnome.Length - 1].ToLower();
+            return $"{Pnome}.{Snome}@acme.br";
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite seu nome completo: ");
+            string NomeCompleto = Console.ReadLine();
+            string email = GerarEmail(NomeCompleto);
+            Console.WriteLine($"E-mail institucional: {email}");
+            Console.ReadLine();
+        }
+    }
+}
